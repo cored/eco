@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package eco;
+
+service Eco {
+  rpc Echo(Text) returns(Text) {}
+}
+
+message Text {
+  string text = 1;
+}
