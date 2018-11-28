@@ -1,8 +1,5 @@
-compile-proto:
+build-protos:
 	protoc -I ./protos eco-schema.proto --go_out=plugins=grpc:./protos/.
-
-start-server:
-	./eco
 
 clean:
 	@rm -rf eco
