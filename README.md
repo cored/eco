@@ -43,8 +43,38 @@ the default server listening port.
 $ ./client/client -s <server:port> -t <text>
 ```
 
-## Using grpcurl
-
 # Development
 
+First you want to generate the stubs based on the protobuf schema. Note that
+this requires the Go gRPC runtime and plug-in installed on your machine,
+including protoc in v3 set up, see grpc.io for the steps.
 
+```
+$ make build-protos
+```
+
+Executing above command results in the auto-generated file protos/eco-schema.pb.go. Do not manually edit this file,
+or put in other words: if you add a new message or service to the schema defined in eco-schema.proto
+just run the make task again and you'll get an updated version of eco-schema.pb.go in the protos/ directory
+as a result.
+
+## Tests
+
+You can run the tests using the following command:
+
+```
+$ make tests
+```
+
+## Why protobuf?
+
+As part of the experiment I wanted to find a way to enforce a contract between
+the client and the server. JSON schema is too loose in terms of enforcing type
+checks and also slower than protobuf. For more information check the protobuf
+site - https://developers.google.com/protocol-buffers/
+
+## TODOs
+
+- [ ] Add authentication
+- [ ] Add manifests files for different deployment backend infrastructure
+- [ ] Dockerized
