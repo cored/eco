@@ -26,7 +26,7 @@ func TestEcho(t *testing.T) {
 		{
 			description: "When any other string",
 			text:        "Hello World!",
-			expected:    "Hello",
+			expected:    "Hello World!",
 			err:         nil,
 		},
 	}
@@ -37,7 +37,7 @@ func TestEcho(t *testing.T) {
 			resp, err := s.Echo(context.Background(), text)
 
 			assert.Equal(t, testcase.err, err)
-			assert.Equal(t, testcase.text, resp.Text)
+			assert.Equal(t, testcase.expected, resp.Text)
 		})
 	}
 }
