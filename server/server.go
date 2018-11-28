@@ -31,5 +31,6 @@ type Server struct{}
 
 // Echo endpoint implementation
 func (s Server) Echo(ctx context.Context, text *pb.Text) (*pb.Text, error) {
+	logrus.Info("Received data: %v", text)
 	return text, nil
 }
