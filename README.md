@@ -4,7 +4,7 @@ Experiment building an echo server with Go
 
 # What is it?
 
-Eco is a simple GRPC [echo protocol](https://en.wikipedia.org/wiki/Echo_Protocol) implementation. It will be use for experimentation with[GRPC]( https://grpc.io)
+Eco is a simple GRPC [echo protocol](https://en.wikipedia.org/wiki/Echo_Protocol) implementation. It will be use for experimentation with[ GRPC]( https://grpc.io)
 
 # Usage
 
