@@ -21,12 +21,6 @@ $ go get -u github.com/cored/eco
 The easiest way to start using the service is by running:
 
 ```
-$ make start-server
-```
-
-or
-
-```
 $ ./eco
 ```
 

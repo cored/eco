@@ -2,6 +2,7 @@ package server
 
 import (
 	"context"
+	"fmt"
 	"net"
 
 	pb "github.com/cored/eco/protos"
@@ -12,7 +13,7 @@ import (
 // Start the server
 func Start(address string) {
 	lis, err := net.Listen("tcp", address)
-	logrus.Infof("Listening on port: %s", address)
+	logrus.Infof("eco is serving on %s", fmt.Sprintf("localhost%s", address))
 	if err != nil {
 		logrus.Fatalf("error connecting to %s - %v", address, err)
 	}
