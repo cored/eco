@@ -4,5 +4,11 @@ compile-proto:
 start-server:
 	./eco
 
+clean:
+	@rm -rf eco
+
+build:
+	go build
+
 tests:
 	go test server/server_test.go

@@ -8,9 +8,15 @@ Eco is a simple GRPC [echo protocol](https://en.wikipedia.org/wiki/Echo_Protocol
 
 # Usage
 
-## Server
+Require Golang 1.9 or above. Installation instructions [here](https://golang.org/doc/install)
 
-Make sure you have Go installed and setup. Instructions can be found [here](https://golang.org/doc/install)
+## Install
+
+```
+$ go get -u github.com/cored/eco
+```
+
+## Server
 
 The easiest way to start using the service is by running:
 
@@ -42,6 +48,8 @@ the default server listening port.
 ```
 $ ./client/client -s <server:port> -t <text>
 ```
+
+## Using grpcurl
 
 # Development
 
