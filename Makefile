@@ -1,2 +1,2 @@
 compile-proto:
-	protoc -I . eco-schema.proto --go_out=plugins=grpc:.
+	protoc -I ./protos eco-schema.proto --go_out=plugins=grpc:./protos/.
