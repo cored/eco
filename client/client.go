@@ -4,32 +4,30 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"log"
 
 	pb "github.com/cored/eco/protos"
+	"github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
 )
 
 func main() {
 	server := flag.String("b", "localhost:8080", "echo server address")
+	argText := flag.String("t", "hello to eco", "text to send to the server")
 	flag.Parse()
 
-	grpc.WithInsecure()
 	conn, err := grpc.Dial(*server, grpc.WithInsecure())
 	if err != nil {
-		log.Panicln(err)
+		logrus.Fatalf("could not connect to the server, make sure is running - %v", err)
 	}
 	defer conn.Close()
 
 	client := pb.NewEcoClient(conn)
 
-	text := &pb.Text{Text: "Here we go"}
+	text := &pb.Text{Text: *argText}
 
-	for {
-		res, err := client.Echo(context.Background(), text)
-		if err != nil {
-			log.Panicln(err)
-		}
-		fmt.Printf("%v: ", res)
+	res, err := client.Echo(context.Background(), text)
+	if err != nil {
+		logrus.Fatalf("echo endpoint returned the following error - %v", err)
 	}
+	fmt.Printf("%v: ", res)
 }
