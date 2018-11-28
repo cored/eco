@@ -24,8 +24,7 @@ or
 $ ./eco
 ```
 
-That will start the server on port [7](https://en.wikipedia.org/wiki/Port_(computer_networking) the default port for the echo protocol.
-The port can be configured by using the `-p` option as follows:
+That will start the server on port `8080`. The port can be configured by using the `-p` option:
 
 ```
 $ ./eco -p <port>
@@ -43,3 +42,7 @@ the default server listening port.
 ```
 $ ./client/client -s <server:port> -t <text>
 ```
+
+# Development
+
+

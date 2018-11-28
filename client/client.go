@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	server := flag.String("b", "localhost:8080", "echo server address")
+	server := flag.String("s", "localhost:8080", "echo server address")
 	argText := flag.String("t", "hello to eco", "text to send to the server")
 	flag.Parse()
 
