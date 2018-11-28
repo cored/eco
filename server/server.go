@@ -12,7 +12,7 @@ import (
 // Start the server
 func Start(address string) {
 	lis, err := net.Listen("tcp", address)
-	logrus.Infof("Listening on port: %d")
+	logrus.Infof("Listening on port: %s", address)
 	if err != nil {
 		logrus.Fatalf("error connecting to %s - %v", address, err)
 	}
